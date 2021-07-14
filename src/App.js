@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Interval from "./components/Interval/index";
+import Average from "./components/Average/index";
+import Sum from "./components/Sum/index";
+import Sort from "./components/Sort/index";
+import { Provider } from "react-redux";
+import store from "./store/index";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>Exercício React-Redux (Simples)</h1>
+        <div className="Linha">
+          <Interval />
+        </div>
+        <div className="Linha">
+          <Average />
+          <Sum />
+          <Sort />
+        </div>
+      </div>
+    </Provider>
   );
 }
-
-export default App;
